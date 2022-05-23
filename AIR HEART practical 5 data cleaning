@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+
+heart = pd.read_csv("PATH")
+air = pd.read_csv('PATH')
+
+
+#it shows top 5 rows
+air.head()
+heart.head()
+
+#it shows true or false null values
+air.isnull()
+heart.isnull()
+
+#it shows na values
+air.isna()
+heart.isna()
+
+#it shows if there is any null values
+air.isna().any()
+heart.isna().any()
+
+
+#it shows total number of null values present in row
+air.isna().sum()
+heart.isna().sum()
+
+
