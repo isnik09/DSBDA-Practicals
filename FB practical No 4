@@ -1,11 +1,8 @@
 import pandas as pd
 import numpy as np 
 
-main_data = pd.read_csv("paste path to the file")
-
-og_data = pd.DataFrame(main_data)
-
-# 01 CREATING DATASET
+main_data = pd.read_csv("/home/path/facebook.csv")
+main_data.head()
 
 new_data = {  "PassengerId" : [10,20,30,40,50,60,70], 
           "Age":[12,14,13,12,14,13,15],
@@ -15,24 +12,23 @@ new_data = {  "PassengerId" : [10,20,30,40,50,60,70],
        }
 
 new_frame = pd.DataFrame(new_data)
+print(new_frame)
 
 
 
-# 02 MERGING DATASET
-merged_dataset = og_data.merge(new_frame, how='right')
+arr = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
+newarr = arr.reshape(4, 3)
+print(newarr)
 
 
-
-# 03 SORTING DATA
-
-sorted_data = main_data.sort_values(by=["Name"], ascending=True)
-  
-#04 Transposing Data
-
-transpose_data = main_data.T
-
-
-
-
+main_data = pd.read_csv("/home/isnik/datasets/facebook.csv")
+data2 = main_data[:25]
+data3 = main_data[25:]
+data4 = pd.concat([data2,data3],axis=0)
+data2 = main_data.iloc[:,:3]
+data3 = main_data.iloc[:,2:]
+data5 = data2.merge(data3, on=['Marketing Spend'],how='inner')
+x = main_data.sort_values(by=["Marketing Spend"],ascending=True)
+print(main_data.T)
 
 
